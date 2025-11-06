@@ -37,3 +37,55 @@ Service evaluation (personal, food, accommodation, fun).
 Interactive filters (price range, date, accommodation type, age, persons count).
 Geographic maps and temperature distribution.
 
+⚙️ How to Run
+
+Clone the repository:
+git clone <your-repo-link>
+cd <your-repo-folder>
+
+Install dependencies:
+pip install -r requirements.txt
+
+Run Jupyter Notebook:
+jupyter notebook project.ipynb
+
+Execute all cells step by step.
+
+Power BI visualization:
+Open hotel_dashboard.pbix in Power BI Desktop.
+Data is already connected (read-only).
+
+
+## 🖥️ Example Code Snippet
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_excel('merged1.xlsx')
+
+# Replace rating category
+df["DHodnoceni"] = df["DHodnoceni"].replace("průměr", "nespokojen")
+
+# Boxplot of price distribution by rating
+sns.boxplot(x="DHodnoceni", y="PCenaUbytovani", data=df)
+plt.yscale("log")
+plt.ylabel("Cena ubytování")
+plt.xlabel("Hodnocení hotelu")
+plt.title("Rozdělení cen podle hodnocení")
+plt.show()
+
+
+## ✅ Requirements
+pandas
+matplotlib
+seaborn
+openpyxl
+
+## 📊 Key Insight
+
+Chi-square test result: p-value ≈ 0.83 → No significant dependence between price and satisfaction at p < .05.
+Observation: Customers who paid more tended to be less satisfied.
+
+
