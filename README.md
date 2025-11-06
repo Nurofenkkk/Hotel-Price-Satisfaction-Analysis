@@ -52,7 +52,7 @@ jupyter notebook project.ipynb
 Execute all cells step by step.
 
 Power BI visualization:
-Open hotel_dashboard.pbix in Power BI Desktop.
+Open hotels.pbix in Power BI Desktop.
 Data is already connected (read-only).
 
 
